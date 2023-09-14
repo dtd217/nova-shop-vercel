@@ -29,7 +29,7 @@ app.use("/api/v1/product", productRoutes);
 
 // Rest API
 app.get('/', (req, res) => {
-    res.json({ message: "API is running..." }).status(200);
+    res.send(`<h1>Hello World</h1>`)
 })
 
 // PORT

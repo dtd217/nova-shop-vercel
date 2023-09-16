@@ -1,1 +1,1 @@
-# nova-shop-vercel
+# nova-shop-vercel-api

@@ -7,7 +7,6 @@ import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
-import path from "path";
 
 // Configure env
 dotenv.config();
@@ -32,12 +31,6 @@ app.use("/api/v1/product", productRoutes);
 app.get('/', (req, res) => {
     res.send(`<h1>Hello World</h1>`)
 })
-
-app.use(express.static(__dirname)); //here is important thing - no static directory, because all static :)
-
-app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
 
 // PORT
 const port = process.env.PORT || 5000;

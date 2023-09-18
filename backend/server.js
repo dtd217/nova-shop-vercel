@@ -7,19 +7,12 @@ import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
-import path from "path";
 
 // Configure env
 dotenv.config();
 
 // MongoDB connect
 connectDatabase();
-
-app.use(express.static(__dirname));
-
-app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
 
 // Rest object
 const app = express();

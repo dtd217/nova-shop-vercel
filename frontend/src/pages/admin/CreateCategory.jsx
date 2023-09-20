@@ -18,7 +18,7 @@ const Category = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(`${process.env.REACT_APP_API}/api/v1/category/create-category`, { name });
+      const { data } = await axios.post(`/api/v1/category/create-category`, { name });
       if (data?.success) {
         toast.success(`${name} is created`);
         getAllCategories();
@@ -34,7 +34,7 @@ const Category = () => {
   // Get all category
   const getAllCategories = async () => {
     try {
-      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/category/get-categories`);
+      const { data } = await axios.get(`/api/v1/category/get-categories`);
       if (data?.success) {
         setCategories(data?.categories);
       }

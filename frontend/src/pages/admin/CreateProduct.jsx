@@ -26,7 +26,7 @@ const CreateProduct = () => {
   // Get all category
   const getAllCategories = async () => {
     try {
-      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/category/get-categories`);
+      const { data } = await axios.get(`/api/v1/category/get-categories`);
       if (data?.success) {
         setCategories(data?.categories);
       }
@@ -40,7 +40,7 @@ const CreateProduct = () => {
   //Get all products
   const getAllProducts = async () => {
     try {
-      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/product/get-products`);
+      const { data } = await axios.get(`/api/v1/product/get-products`);
       if (data?.success) {
         setProducts(data?.products);
       }
@@ -64,7 +64,7 @@ const CreateProduct = () => {
       productData.append("description", description);
       productData.append("photo", photo);
       productData.append("shipping", shipping);
-      const { data } = await axios.post(`${process.env.REACT_APP_API}/api/v1/product/create-product`, productData);
+      const { data } = await axios.post(`/api/v1/product/create-product`, productData);
       if (data?.success) {
         toast.success(`${name} is created`);
         setVisibleCreate(false);

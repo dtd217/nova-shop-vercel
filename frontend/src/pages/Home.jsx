@@ -20,7 +20,7 @@ const Home = () => {
   // Get all category
   const getAllCategories = async () => {
     try {
-      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/category/get-categories`);
+      const { data } = await axios.get(`/api/v1/category/get-categories`);
       if (data?.success) {
         setCategories(data?.categories);
       }
@@ -54,7 +54,7 @@ const Home = () => {
   // Get total count  
   const getTotal = async () => {
     try {
-      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/product/count-product`);
+      const { data } = await axios.get(`/api/v1/product/count-product`);
       setTotal(data?.total);
     }
     catch (error) {
@@ -109,7 +109,7 @@ const Home = () => {
   // Get filtered products
   const getFilteredProducts = async () => {
     try {
-      const { data } = await axios.post(`${process.env.REACT_APP_API}/api/v1/product/filter-product`, { checked, radio })
+      const { data } = await axios.post(`/api/v1/product/filter-product`, { checked, radio })
       setProducts(data?.products)
     }
     catch (error) {

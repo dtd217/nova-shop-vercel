@@ -26,7 +26,7 @@ const Register = () => {
    const handleSubmit = async (e) => {
       e.preventDefault()
       try {
-         const res = await axios.post("/api/v1/auth/register", { name, email, password, address, phone })
+         const res = await axios.post(`${process.env.REACT_APP_API}/api/v1/auth/register`, { name, email, password, address, phone })
          if (res && res.data.success) {
             toast.success(res.data && res.data.message, toastObject);
             navigate("/login");
